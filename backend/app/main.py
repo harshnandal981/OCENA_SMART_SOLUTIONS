@@ -30,11 +30,18 @@ def _configured(value: str | None) -> bool:
     return bool(value and value.strip())
 
 
+# def _cors_origins() -> list[str]:
+#     origins = {
+#         settings.frontend_url,
+#         settings.frontend_url.replace("https://ocena-smart-solutions.vercel.app"),
+#     }
+#     return sorted(origin for origin in origins if origin)
 def _cors_origins() -> list[str]:
     origins = {
         settings.frontend_url,
-        settings.frontend_url.replace("https://ocena-smart-solutions.vercel.app"),
+        "https://ocena-smart-solutions.vercel.app",
     }
+
     return sorted(origin for origin in origins if origin)
 
 app.add_middleware(
