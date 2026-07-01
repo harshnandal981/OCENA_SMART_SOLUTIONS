@@ -33,7 +33,7 @@ def _configured(value: str | None) -> bool:
 def _cors_origins() -> list[str]:
     origins = {
         settings.frontend_url,
-        settings.frontend_url.replace("localhost", "127.0.0.1"),
+        settings.frontend_url.replace("localhost", "127.0.0.1", "https://ocena-smart-solutions.vercel.app/"),
     }
     return sorted(origin for origin in origins if origin)
 
